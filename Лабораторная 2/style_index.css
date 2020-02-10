@@ -1,0 +1,25 @@
+.FormH1{
+    color:red;
+}
+.personal_data{
+    display:inline-block;
+    margin-bottom:10px;
+    margin-left:150px;
+    /* width:150px; */
+}
+.personal_data:nth-child(3){
+    margin-left:185px;
+}
+.personal_data:last-child{
+    margin-left:171px;
+}
+fieldset{
+    border:1px solid blue;
+    border-radius: 10px;
+    /* display:inline-block; */
+    /* width:150px; */
+    /* margin-left:100px; */
+}
+legend{
+    color:blue;
+}
