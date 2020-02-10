@@ -1,0 +1,6 @@
+C:\Users\stud\374\Черных Артём\DinamicProg_1\bin\Debug\DinamicProg_1.exe.config
+C:\Users\stud\374\Черных Артём\DinamicProg_1\bin\Debug\DinamicProg_1.exe
+C:\Users\stud\374\Черных Артём\DinamicProg_1\bin\Debug\DinamicProg_1.pdb
+C:\Users\stud\374\Черных Артём\DinamicProg_1\obj\Debug\DinamicProg_1.csprojResolveAssemblyReference.cache
+C:\Users\stud\374\Черных Артём\DinamicProg_1\obj\Debug\DinamicProg_1.exe
+C:\Users\stud\374\Черных Артём\DinamicProg_1\obj\Debug\DinamicProg_1.pdb
