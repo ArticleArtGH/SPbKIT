@@ -4,3 +4,10 @@ C:\Users\stud\374\Черных Артём\DinamicProg_1\bin\Debug\DinamicProg_1.
 C:\Users\stud\374\Черных Артём\DinamicProg_1\obj\Debug\DinamicProg_1.csprojResolveAssemblyReference.cache
 C:\Users\stud\374\Черных Артём\DinamicProg_1\obj\Debug\DinamicProg_1.exe
 C:\Users\stud\374\Черных Артём\DinamicProg_1\obj\Debug\DinamicProg_1.pdb
+D:\Локальный диск E\Git_Save\SPbKIT\Math_methods\DinamicProg_1\bin\Debug\DinamicProg_1.exe.config
+D:\Локальный диск E\Git_Save\SPbKIT\Math_methods\DinamicProg_1\bin\Debug\DinamicProg_1.exe
+D:\Локальный диск E\Git_Save\SPbKIT\Math_methods\DinamicProg_1\bin\Debug\DinamicProg_1.pdb
+D:\Локальный диск E\Git_Save\SPbKIT\Math_methods\DinamicProg_1\obj\Debug\DinamicProg_1.csprojAssemblyReference.cache
+D:\Локальный диск E\Git_Save\SPbKIT\Math_methods\DinamicProg_1\obj\Debug\DinamicProg_1.csproj.CoreCompileInputs.cache
+D:\Локальный диск E\Git_Save\SPbKIT\Math_methods\DinamicProg_1\obj\Debug\DinamicProg_1.exe
+D:\Локальный диск E\Git_Save\SPbKIT\Math_methods\DinamicProg_1\obj\Debug\DinamicProg_1.pdb
