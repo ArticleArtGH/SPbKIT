@@ -1,0 +1,7 @@
+C:\Users\stud_307\374\Черных Артём\Caesars\bin\Debug\Caesars.exe.config
+C:\Users\stud_307\374\Черных Артём\Caesars\bin\Debug\Caesars.exe
+C:\Users\stud_307\374\Черных Артём\Caesars\bin\Debug\Caesars.pdb
+C:\Users\stud_307\374\Черных Артём\Caesars\obj\Debug\Caesars.csprojAssemblyReference.cache
+C:\Users\stud_307\374\Черных Артём\Caesars\obj\Debug\Caesars.csproj.CoreCompileInputs.cache
+C:\Users\stud_307\374\Черных Артём\Caesars\obj\Debug\Caesars.exe
+C:\Users\stud_307\374\Черных Артём\Caesars\obj\Debug\Caesars.pdb
