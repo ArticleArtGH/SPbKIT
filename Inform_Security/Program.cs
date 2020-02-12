@@ -12,7 +12,7 @@ namespace Caesars_code//Работает только для EN символов
         static void Main(string[] args)
         {
             int key = 0, long_pswd = 0;
-            string password = "", code = "", exercise = "", c_key = "";
+            string password = "", code = "", exercise = "", s_key = "";
             string alhabet = "abcdefghijklmnopqrstuvwxyz";
             char[] c_array_alhabet = new char[alhabet.Length];
             c_array_alhabet = alhabet.ToCharArray();
@@ -51,7 +51,7 @@ namespace Caesars_code//Работает только для EN символов
                         }
                         code += c_array_alhabet[index];
                     }//ЗАШИФРОВКА пароля
-                    WriteLine("Зашифрованный пароль:" + code);
+                    WriteLine("Зашифрованный пароль:\n" + code);
 
                     WriteLine("Введите пароль на английском, который хотите расшифровать:");
                     code = ReadLine();
@@ -79,7 +79,7 @@ namespace Caesars_code//Работает только для EN символов
                         }
                         password += c_array_alhabet[index];
                     }//ДЕШИФРОВКА пароля
-                    WriteLine("Зашифрованный пароль:" + password);
+                    WriteLine("Расшифрованный пароль:\n" + password);
                     break;
                 case "2":
                     char[,] table_Vigenere = new char[26, 26];
@@ -100,29 +100,50 @@ namespace Caesars_code//Работает только для EN символов
                         k = extra_k;
                         WriteLine();
                     }
-                    WriteLine("Введите ключ для шифрования пароля:");
-                    c_key = ReadLine();
+                    WriteLine("Введите кодовое слово (ключ) для шифрования пароля:");
+                    s_key = ReadLine();
                     string changePasword = "";
                     k = 0;
                     for(int i=0;i<long_pswd; i++)
                     {
-                        if (k == c_key.Length)
+                        if (k == s_key.Length)
                         {
                             k = 0;
                         }
-                        changePasword += c_key[k];
+                        changePasword += s_key[k];
                         k++;
                     }
-                    WriteLine(changePasword);
+                    WriteLine("Изменённый пароль для шифрования по Vigenere\n" + changePasword);
+                    int index_I = 0, index_J = 0;
                     for (k = 0; k < long_pswd; k++)
                     {
-                        //index = Array.BinarySearch(c_array_alhabet, c_arr_password[i]);//идиея искать буквы в алфавите и затем шифр на основе массивВижнера[i,j]
-
-                        //for (int j = 0; j < )
-                        //{
-
-                        //}
+                        index_I = Array.BinarySearch(c_array_alhabet, password[k]);
+                        index_J = Array.BinarySearch(c_array_alhabet, changePasword[k]);
+                        code += table_Vigenere[index_I, index_J];
                     }
+                    WriteLine("Зашифрованный пароль:\n"+code);
+
+                    WriteLine("Введите пароль на английском, который хотите расшифровать:");
+                    code = ReadLine();
+                    WriteLine("Введите кодовое слово (ключ) для расшифрования пароля:");
+                    s_key = ReadLine();
+                    k = 0; long_pswd = code.Length;
+                    for (int i = 0; i < long_pswd; i++)
+                    {
+                        if (k == s_key.Length)
+                        {
+                            k = 0;
+                        }
+                        changePasword += s_key[k];
+                        k++;
+                    }
+                    for (k = 0; k < long_pswd; k++)
+                    {
+                        index_I = Array.BinarySearch(c_array_alhabet, code[k]);
+                        index_J = Array.BinarySearch(c_array_alhabet, changePasword[k]);
+                        code += table_Vigenere[index_I, index_J];
+                    }
+                    WriteLine("Расшифрованный пароль:\n" + password);
                     //foreach(int i in table_Vigenere)
                     //{
                     //    WriteLine(i);
