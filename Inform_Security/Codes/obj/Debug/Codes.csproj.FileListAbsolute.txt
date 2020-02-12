@@ -1,0 +1,7 @@
+D:\Локальный диск E\Git_Save\SPbKIT\Inform_Security\Codes\bin\Debug\Codes.exe.config
+D:\Локальный диск E\Git_Save\SPbKIT\Inform_Security\Codes\bin\Debug\Codes.exe
+D:\Локальный диск E\Git_Save\SPbKIT\Inform_Security\Codes\bin\Debug\Codes.pdb
+D:\Локальный диск E\Git_Save\SPbKIT\Inform_Security\Codes\obj\Debug\Codes.csprojAssemblyReference.cache
+D:\Локальный диск E\Git_Save\SPbKIT\Inform_Security\Codes\obj\Debug\Codes.csproj.CoreCompileInputs.cache
+D:\Локальный диск E\Git_Save\SPbKIT\Inform_Security\Codes\obj\Debug\Codes.exe
+D:\Локальный диск E\Git_Save\SPbKIT\Inform_Security\Codes\obj\Debug\Codes.pdb
