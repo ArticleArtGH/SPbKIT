@@ -51,6 +51,20 @@ namespace Statement
 
             //this.numericUpDown_CountStud.Enabled = false;
             //this.numericUpDown_CountSubject.Enabled = false;
+
+            //Пользователь не может
+            this.dataGridView_Statement.AllowUserToAddRows = false;//Добавлять строки
+            this.dataGridView_Statement.AllowUserToOrderColumns = false;//Добавлять столбцы
+            this.dataGridView_Statement.AllowUserToDeleteRows = false;//Удалять строки
+            this.dataGridView_Statement.AllowUserToResizeRows = false;//Изменять размер строки
+            this.dataGridView_Statement.AllowUserToResizeColumns = false;//Изменять размер столбца
+            this.dataGridView_Statement.AllowUserToOrderColumns = false;//Изменять порядок столбцов
+            this.dataGridView_Statement.MultiSelect = false;//Мультивыделение строк или столбцов
+
+            this.dataGridView_Statement.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGridView_Statement.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView_Statement.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView_Statement.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             this.Height = 482;
             this.dataGridView_Statement.Enabled = false;//Это не лепо, наверное, смотря в каком случае
             //this.dataGridView_Statement.ReadOnly = true;
@@ -107,6 +121,20 @@ namespace Statement
 
         private void button_ReadFile_Click(object sender, EventArgs e)
         {
+            //Пользователь не может
+            this.dataGridView_Statement.AllowUserToAddRows = false;//Добавлять строки
+            this.dataGridView_Statement.AllowUserToOrderColumns = false;//Добавлять столбцы
+            this.dataGridView_Statement.AllowUserToDeleteRows = false;//Удалять строки
+            this.dataGridView_Statement.AllowUserToResizeRows = false;//Изменять размер строки
+            this.dataGridView_Statement.AllowUserToResizeColumns = false;//Изменять размер столбца
+            this.dataGridView_Statement.AllowUserToOrderColumns = false;//Изменять порядок столбцов
+            this.dataGridView_Statement.MultiSelect = false;//Мультивыделение строк или столбцов
+
+            // !!! Какая - то проблема с Авторазмером Заголовкоа строк
+            this.dataGridView_Statement.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGridView_Statement.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView_Statement.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView_Statement.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             this.Height = 482;
             this.numericUpDown_CountStud.Enabled = false;
             this.numericUpDown_CountSubject.Enabled = false;
@@ -357,8 +385,15 @@ namespace Statement
             this.numericUpDown_CountStud.Enabled = true;
             this.numericUpDown_CountSubject.Enabled = true;
             this.dataGridView_Statement.Enabled = true;//Это не лепо, наверное, смотря в каком случае
-
             this.Height = 600;
+            //Пользователь может
+            this.dataGridView_Statement.AllowUserToAddRows = true;//Добавлять строки
+            this.dataGridView_Statement.AllowUserToOrderColumns = true;//Добавлять столбцы
+            this.dataGridView_Statement.AllowUserToDeleteRows = true;//Удалять строки
+            this.dataGridView_Statement.AllowUserToResizeRows = true;//Изменять размер строки
+            this.dataGridView_Statement.AllowUserToResizeColumns = true;//Изменять размер столбца
+            this.dataGridView_Statement.AllowUserToOrderColumns = true;//Изменять порядок столбцов
+            this.dataGridView_Statement.MultiSelect = true;//Мультивыделение строк или столбцов
             //this.dataGridView_Statement.ReadOnly = false;
 
             //this.dataGridView_Statement.Columns[0].HeaderText = "";
@@ -406,6 +441,15 @@ namespace Statement
         private void button_RemoveSubject_Click(object sender, EventArgs e)
         {
             int countRows = this.dataGridView_Statement.RowCount, countColumn = this.dataGridView_Statement.ColumnCount;
+            //int currentColomn = this.dataGridView_Statement.CurrentCell.ColumnIndex;
+            //string currentColomn = this.dataGridView_Statement.SelectedColumns.ToString();//Показывает значения выбранной ячейки !!!
+
+            //Пока не знаю как убрать столбец который выбрали мышкой по индексу
+            int currentColomn = Convert.ToInt32(this.dataGridView_Statement.Columns[dataGridView_Statement.CurrentCell.ColumnIndex].HeaderCell);
+            this.dataGridView_Statement.Columns.RemoveAt(currentColomn);//Удаляет столбец по Индексу
+            
+            //dataGridView_Statement.Columns.Remove(currentColomn.ToString());
+            //this.dataGridView_Statement.Columns[dataGridView_Statement.CurrentCell.ColumnIndex].HeaderCell.ToString();
             /*int RemoveCountColumn = */
             //this.dataGridView_Statement.ColumnCount = countColumn - 1;
             //this.dataGridView_Statement.Dele;
