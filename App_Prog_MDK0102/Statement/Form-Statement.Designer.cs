@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_Statement = new System.Windows.Forms.TabPage();
             this.label_Count_Subject = new System.Windows.Forms.Label();
@@ -56,6 +56,13 @@
             this.tabPage_Progress_Quality = new System.Windows.Forms.TabPage();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.textBox_CellSubject = new System.Windows.Forms.TextBox();
+            this.textBox_CellPerson = new System.Windows.Forms.TextBox();
+            this.button_AddSubject = new System.Windows.Forms.Button();
+            this.button_RemoveSubject = new System.Windows.Forms.Button();
+            this.button_AddPerson = new System.Windows.Forms.Button();
+            this.button_RemovePerson = new System.Windows.Forms.Button();
+            this.button_Reset = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage_Statement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CountSubject)).BeginInit();
@@ -295,42 +302,111 @@
             // 
             // chart2
             // 
-            chartArea11.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.chart2.Legends.Add(legend11);
+            chartArea7.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chart2.Legends.Add(legend7);
             this.chart2.Location = new System.Drawing.Point(346, 24);
             this.chart2.Name = "chart2";
-            series11.ChartArea = "ChartArea1";
-            series11.Legend = "Legend1";
-            series11.Name = "Series1";
-            this.chart2.Series.Add(series11);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chart2.Series.Add(series7);
             this.chart2.Size = new System.Drawing.Size(300, 300);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
             // 
             // chart1
             // 
-            chartArea12.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chart1.Legends.Add(legend12);
+            chartArea8.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chart1.Legends.Add(legend8);
             this.chart1.Location = new System.Drawing.Point(6, 21);
             this.chart1.Name = "chart1";
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.chart1.Series.Add(series12);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(300, 300);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            // 
+            // textBox_CellSubject
+            // 
+            this.textBox_CellSubject.Location = new System.Drawing.Point(34, 463);
+            this.textBox_CellSubject.Name = "textBox_CellSubject";
+            this.textBox_CellSubject.Size = new System.Drawing.Size(179, 20);
+            this.textBox_CellSubject.TabIndex = 1;
+            // 
+            // textBox_CellPerson
+            // 
+            this.textBox_CellPerson.Location = new System.Drawing.Point(34, 517);
+            this.textBox_CellPerson.Name = "textBox_CellPerson";
+            this.textBox_CellPerson.Size = new System.Drawing.Size(179, 20);
+            this.textBox_CellPerson.TabIndex = 2;
+            // 
+            // button_AddSubject
+            // 
+            this.button_AddSubject.Location = new System.Drawing.Point(249, 448);
+            this.button_AddSubject.Name = "button_AddSubject";
+            this.button_AddSubject.Size = new System.Drawing.Size(126, 35);
+            this.button_AddSubject.TabIndex = 3;
+            this.button_AddSubject.Text = "Добавить предмет";
+            this.button_AddSubject.UseVisualStyleBackColor = true;
+            this.button_AddSubject.Click += new System.EventHandler(this.button_AddSubject_Click);
+            // 
+            // button_RemoveSubject
+            // 
+            this.button_RemoveSubject.Location = new System.Drawing.Point(407, 448);
+            this.button_RemoveSubject.Name = "button_RemoveSubject";
+            this.button_RemoveSubject.Size = new System.Drawing.Size(126, 35);
+            this.button_RemoveSubject.TabIndex = 4;
+            this.button_RemoveSubject.Text = "Убрать предмет";
+            this.button_RemoveSubject.UseVisualStyleBackColor = true;
+            this.button_RemoveSubject.Click += new System.EventHandler(this.button_RemoveSubject_Click);
+            // 
+            // button_AddPerson
+            // 
+            this.button_AddPerson.Location = new System.Drawing.Point(249, 502);
+            this.button_AddPerson.Name = "button_AddPerson";
+            this.button_AddPerson.Size = new System.Drawing.Size(126, 35);
+            this.button_AddPerson.TabIndex = 5;
+            this.button_AddPerson.Text = "Добавить человека";
+            this.button_AddPerson.UseVisualStyleBackColor = true;
+            // 
+            // button_RemovePerson
+            // 
+            this.button_RemovePerson.Location = new System.Drawing.Point(407, 502);
+            this.button_RemovePerson.Name = "button_RemovePerson";
+            this.button_RemovePerson.Size = new System.Drawing.Size(126, 35);
+            this.button_RemovePerson.TabIndex = 6;
+            this.button_RemovePerson.Text = "Убрать человека";
+            this.button_RemovePerson.UseVisualStyleBackColor = true;
+            // 
+            // button_Reset
+            // 
+            this.button_Reset.Location = new System.Drawing.Point(559, 448);
+            this.button_Reset.Name = "button_Reset";
+            this.button_Reset.Size = new System.Drawing.Size(87, 89);
+            this.button_Reset.TabIndex = 7;
+            this.button_Reset.Text = "Cброс значений";
+            this.button_Reset.UseVisualStyleBackColor = true;
+            this.button_Reset.Click += new System.EventHandler(this.button_Reset_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 443);
+            this.ClientSize = new System.Drawing.Size(684, 561);
+            this.Controls.Add(this.button_Reset);
+            this.Controls.Add(this.button_RemovePerson);
+            this.Controls.Add(this.button_AddPerson);
+            this.Controls.Add(this.button_RemoveSubject);
+            this.Controls.Add(this.button_AddSubject);
+            this.Controls.Add(this.textBox_CellPerson);
+            this.Controls.Add(this.textBox_CellSubject);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Ведомость";
@@ -351,6 +427,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -378,6 +455,13 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.TextBox textBox_CellSubject;
+        private System.Windows.Forms.TextBox textBox_CellPerson;
+        private System.Windows.Forms.Button button_AddSubject;
+        private System.Windows.Forms.Button button_RemoveSubject;
+        private System.Windows.Forms.Button button_AddPerson;
+        private System.Windows.Forms.Button button_RemovePerson;
+        private System.Windows.Forms.Button button_Reset;
     }
 }
 

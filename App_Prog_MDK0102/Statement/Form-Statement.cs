@@ -22,6 +22,7 @@ namespace Statement
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Height = 482;
             this.dataGridView_Statement.RowCount = 1;
             this.dataGridView_Statement.ColumnCount = 1;
         }
@@ -50,6 +51,7 @@ namespace Statement
 
             //this.numericUpDown_CountStud.Enabled = false;
             //this.numericUpDown_CountSubject.Enabled = false;
+            this.Height = 482;
             this.dataGridView_Statement.Enabled = false;//Это не лепо, наверное, смотря в каком случае
             //this.dataGridView_Statement.ReadOnly = true;
             //int intRow = integerRnd.Next(10, 20), intColumn = integerRnd.Next(10,20);
@@ -105,6 +107,7 @@ namespace Statement
 
         private void button_ReadFile_Click(object sender, EventArgs e)
         {
+            this.Height = 482;
             this.numericUpDown_CountStud.Enabled = false;
             this.numericUpDown_CountSubject.Enabled = false;
             this.dataGridView_Statement.Enabled = false;//Это не лепо, наверное, смотря в каком случае
@@ -354,6 +357,8 @@ namespace Statement
             this.numericUpDown_CountStud.Enabled = true;
             this.numericUpDown_CountSubject.Enabled = true;
             this.dataGridView_Statement.Enabled = true;//Это не лепо, наверное, смотря в каком случае
+
+            this.Height = 600;
             //this.dataGridView_Statement.ReadOnly = false;
 
             //this.dataGridView_Statement.Columns[0].HeaderText = "";
@@ -364,6 +369,47 @@ namespace Statement
             //this.dataGridView_Statement.SelectionMode(get)
 
             //dataGridView1.Columns[0].HeaderText = "Логин";
+        }
+
+        private void button_Reset_Click(object sender, EventArgs e)
+        {
+            //dataGridView_Statement.
+            //this.dataGridView_Statement.Clear;
+          
+            int countRows = this.dataGridView_Statement.RowCount, countColumn = this.dataGridView_Statement.ColumnCount;
+            //Очистка Зaголовков
+            for (int i = 0; i < countRows; i++)
+            {
+                this.dataGridView_Statement.Rows[i].HeaderCell.Value = null;
+            }
+            for (int j = 0; j < countColumn; j++)
+            {
+                this.dataGridView_Statement.Columns[j].HeaderCell.Value = null;
+            }
+            //Очистка Таблицы
+            for (int i = 0; i < countRows; i++)
+            {
+                for (int j = 0; j < countColumn; j++)
+                {
+                    this.dataGridView_Statement[j, i].Value = null;
+                }
+            }
+        }
+
+        private void button_AddSubject_Click(object sender, EventArgs e)
+        {
+            int countRows = this.dataGridView_Statement.RowCount, countColumn = this.dataGridView_Statement.ColumnCount;
+            int NewCountColumn = this.dataGridView_Statement.ColumnCount = countColumn+1;
+            this.dataGridView_Statement.Columns[countColumn].HeaderCell.Value = this.textBox_CellSubject.Text;
+        }
+
+        private void button_RemoveSubject_Click(object sender, EventArgs e)
+        {
+            int countRows = this.dataGridView_Statement.RowCount, countColumn = this.dataGridView_Statement.ColumnCount;
+            /*int RemoveCountColumn = */
+            //this.dataGridView_Statement.ColumnCount = countColumn - 1;
+            //this.dataGridView_Statement.Dele;
+            //this.dataGridView_Statement.Columns[countColumn].HeaderCell.Value = this.textBox_CellSubject.Text;
         }
     }
 }
