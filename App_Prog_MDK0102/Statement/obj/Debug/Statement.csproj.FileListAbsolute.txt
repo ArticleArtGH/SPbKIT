@@ -38,3 +38,13 @@ C:\Users\stud\374\Черных Елисеев\Statement\obj\Debug\Statement.pdb
 C:\Users\stud\374\Черных Елисеев\Statement\bin\Debug\Statement.exe.config
 C:\Users\stud\374\Черных Елисеев\Statement\bin\Debug\Statement.exe
 C:\Users\stud\374\Черных Елисеев\Statement\bin\Debug\Statement.pdb
+D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Statement\bin\Debug\Statement.exe.config
+D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Statement\bin\Debug\Statement.exe
+D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Statement\bin\Debug\Statement.pdb
+D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Statement\obj\Debug\Statement.csprojAssemblyReference.cache
+D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Statement\obj\Debug\Statement.Form1.resources
+D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Statement\obj\Debug\Statement.Properties.Resources.resources
+D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Statement\obj\Debug\Statement.csproj.GenerateResource.cache
+D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Statement\obj\Debug\Statement.csproj.CoreCompileInputs.cache
+D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Statement\obj\Debug\Statement.exe
+D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Statement\obj\Debug\Statement.pdb
