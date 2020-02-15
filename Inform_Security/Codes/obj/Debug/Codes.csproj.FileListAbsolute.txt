@@ -5,3 +5,5 @@ D:\Локальный диск E\Git_Save\SPbKIT\Inform_Security\Codes\obj\Debug
 D:\Локальный диск E\Git_Save\SPbKIT\Inform_Security\Codes\obj\Debug\Codes.csproj.CoreCompileInputs.cache
 D:\Локальный диск E\Git_Save\SPbKIT\Inform_Security\Codes\obj\Debug\Codes.exe
 D:\Локальный диск E\Git_Save\SPbKIT\Inform_Security\Codes\obj\Debug\Codes.pdb
+C:\Users\stud\374\Черных Артём\Codes\obj\Debug\Codes.exe
+C:\Users\stud\374\Черных Артём\Codes\obj\Debug\Codes.pdb
