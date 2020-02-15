@@ -26,12 +26,12 @@ namespace Caesars_code//Работает только для EN символов
             WriteLine("Выберите задание по шифрованию \n" +
                 "1 - Цезарь\n" +
                 "2 - Вижлер\n" +
-                "3 - ...");
+                "3 - Перестановка\n");
             exercise = ReadLine(); 
             switch (exercise)
             {
                 case "1":
-                    WriteLine("Введите ключ для шифрования пароля:");
+                    WriteLine("Введите число (ключ) для шифрования пароля:");
                     key = Convert.ToInt32(ReadLine());
                     int index = 0, inkey = key;
                     for (int i = 0; i < long_pswd; i++)
@@ -154,7 +154,17 @@ namespace Caesars_code//Работает только для EN символов
                     //}
                     break;
                 case "3":
-
+                    WriteLine("Введите кодовое число (ключ) для шифрования пароля:");
+                    key = Convert.ToInt32(ReadLine());
+                    while(key>long_pswd)
+                    {
+                        key = key - long_pswd;
+                    }
+                    index = key; code = password;char c_sym='';
+                    while (index < long_pswd)
+                    {
+                        k = password[index];
+                    }
                     break;
                 default: WriteLine("Вы ввели не верное значение!\n" +
                     "Программа ЗАКРЫВАЕТСЯ !\n" +
