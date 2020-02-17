@@ -127,6 +127,7 @@ namespace Caesars_code//Работает только для EN символов
                     code = ReadLine();
                     WriteLine("Введите кодовое слово (ключ) для расшифрования пароля:");
                     s_key = ReadLine();
+                    long_pswd = code.Length;
                     k = 0; long_pswd = code.Length; changePasword = "";
                     for (int i = 0; i < long_pswd; i++)
                     {
@@ -179,6 +180,7 @@ namespace Caesars_code//Работает только для EN символов
                     code = ReadLine();
                     WriteLine("Введите число (ключ) для рассшифрования пароля:");
                     key = Convert.ToInt32(ReadLine());
+                    long_pswd = code.Length;
                     while (key > long_pswd)
                     {
                         key = key - long_pswd;
@@ -200,7 +202,8 @@ namespace Caesars_code//Работает только для EN символов
                     }
                     WriteLine("Расшифрованный пароль:\n" + password);
                     break;
-                case "4":
+                case "4"://Минус в моём коде только что не выведит каретку(пренос на следующую строку)
+                    //в виде символов.
                     WriteLine("Введите кодовое слово (ключ) для шифрования пароля:");
                     s_key = ReadLine();
                     k = 0; changePasword = "";
@@ -214,30 +217,111 @@ namespace Caesars_code//Работает только для EN символов
                         k++;
                     }
                     WriteLine("Распределение ключа по длинные пароля для шифрования\n" + changePasword);
-                    int bits=0; string s_symPswd = "", s_symChPswd = "", s_symCode = ""; code ="";//c_sym = ' ';
+                    byte bits; string s_symPswd = "", s_symChPswd = "", s_symCode = ""; code ="";//c_sym = ' ';
                     //так как это ascii  то можно и просто символы складывать ...
                     for (int i = 0; i < long_pswd; i++)
                     {
                         //bits = Encoding.ASCII.GetBytes(s_sym);
-                        s_symPswd = Convert.ToString(password[i], 2);
+                        s_symPswd = Convert.ToString(password[i], 2);//Перевод в 2 систему счисленя
                         s_symChPswd = Convert.ToString(changePasword[i], 2);
+
+                        //Уравнивание длинны двоичного кода символа
+                        string s_dif = "";
+                        if (s_symPswd.Length > s_symChPswd.Length)
+                        {
+                            int dif = s_symPswd.Length - s_symChPswd.Length;
+                            for (int j = 0; j < dif; j++)
+                                s_dif += 0;
+                            s_symChPswd = s_symChPswd.Insert(0, s_dif);//Вставляем недостающие символы в начало
+                        }
+                        if (s_symChPswd.Length > s_symPswd.Length)
+                        {
+                            int dif = s_symChPswd.Length - s_symPswd.Length;
+                            for (int j = 0; j < dif; j++)
+                                s_dif += 0;
+                            s_symPswd = s_symPswd.Insert(0, s_dif);//Вставляем недостающие символы в начало
+                        }
+
                         for (int j = 0; j < s_symPswd.Length; j++)
                             s_symCode += (s_symPswd[j] == s_symChPswd[j]) ? "0" : "1";
-                        //for(k = 0; k < s_symPswd.Length; k++)
-                        //bits = Convert.ToInt32(s_symCode[k]);
-                        bits = Convert.ToInt32(s_symCode);
+                        //bits = new int[s_symPswd.Length];
+                        //for (int j = 0; j < s_symPswd.Length; j++)
+                        //    bits[j] = (s_symPswd[j] == s_symChPswd[j]) ? 0 : 1;
+
+                        //bits = Convert.ToInt32(s_symCode);
                         //code += Convert.ToString(bits, toBase:S);
-                        code += (char)bits;//Encoding.ASCII.GetChars(bits);
+                        //code += (char)bits;//Encoding.ASCII.GetChars(bits);
+
+                        //s_symCode = Convert.ToString(Convert.ToByte(s_symCode), toBase:10);
+                        //s_symCode = Convert.ToString(s_symCode, toBase: 10);
+
+                        bits = Convert.ToByte(s_symCode, 2);//Перевод в 10 систему счисленя,
+                        //можно также это использовать в INT, а ещё где не проверял.
+
+                        //bits = Convert.ToInt64(s_symCode);
+                        code += Convert.ToChar(bits);
+                        //code += "\\" + Encoding.GetEncoding(1251).GetString(new byte[] { bits } )[0];
+                        //code += Convert.ToChar(bits);
+
                         //code += Convert.ToString(bits, toBase:8);
+
                         s_symCode = "";
                         bits = 0;
+
                         //xor
                         //не понял в какой кодировку именно я должен получить и при помощи кодировку
                         //я получу сразу двойичный код ?
                     }
                     WriteLine("Зашифрованный пароль:\n" + code);
 
-                    //password = "";
+                    WriteLine("Введите зашифрованный пароль, который хотите расшифровать:");
+                    code = ReadLine();
+                    WriteLine("Введите кодовое слово (ключ) для шифрования пароля:");
+                    s_key = ReadLine();
+                    k = 0; changePasword = "";long_pswd = code.Length;
+                    for (int i = 0; i < long_pswd; i++)
+                    {
+                        if (k == s_key.Length)
+                        {
+                            k = 0;
+                        }
+                        changePasword += s_key[k];
+                        k++;
+                    }
+                    WriteLine("Распределение ключа по длинные пароля для расшифрования\n" + changePasword);
+                    bits=0; s_symPswd = ""; s_symChPswd = ""; s_symCode = ""; password = "";
+                    for (int i = 0; i < long_pswd; i++)
+                    {
+                        s_symPswd = Convert.ToString(code[i], 2);//Перевод в 2 систему счисленя
+                        s_symChPswd = Convert.ToString(changePasword[i], 2);
+
+                        //Уравнивание длинны двоичного кода символа
+                        string s_dif = "";
+                        if (s_symPswd.Length > s_symChPswd.Length)
+                        {
+                            int dif = s_symPswd.Length - s_symChPswd.Length;
+                            for (int j = 0; j < dif; j++)
+                                s_dif += 0;
+                            s_symChPswd = s_symChPswd.Insert(0, s_dif);//Вставляем недостающие символы в начало
+                        }
+                        if (s_symChPswd.Length > s_symPswd.Length)
+                        {
+                            int dif = s_symChPswd.Length - s_symPswd.Length;
+                            for (int j = 0; j < dif; j++)
+                                s_dif += 0;
+                            s_symPswd = s_symPswd.Insert(0, s_dif);//Вставляем недостающие символы в начало
+                        }
+
+                        for (int j = 0; j < s_symPswd.Length; j++)
+                            s_symCode += (s_symPswd[j] == s_symChPswd[j]) ? "0" : "1";
+
+                        bits = Convert.ToByte(s_symCode, 2);//Перевод в 10 систему счисленя,
+                        //можно также это использовать в INT, а ещё где не проверял.
+                        password += Convert.ToChar(bits);
+                        s_symCode = "";
+                        bits = 0;
+                    }
+                    WriteLine("Расшифрованный пароль:\n" + password);
                     break;
                 default: WriteLine("Вы ввели не верное значение!\n" +
                     "Программа ЗАКРЫВАЕТСЯ !\n" +
