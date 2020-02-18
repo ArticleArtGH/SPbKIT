@@ -9,7 +9,7 @@ body{
     /* left: 250px; */
     /* margin-left:250px; */
 }
-Для себя хотел знать как сделать сайт по середине
+/* Для себя хотел знать как сделать сайт по середине */
 .FormH1{
     color:red;
 }
@@ -44,7 +44,7 @@ select{
     margin-left:77px;
 }
 .values:nth-child(7){
-    margin-left:69px;
+    margin-left:83px;
 }
 .values:nth-child(11){
     margin-left:90px;

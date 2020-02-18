@@ -13,8 +13,8 @@
                 <legend>Ваши данные</legend>
                     <label for="userName">Имя:</label><input class="personal_data" id="userName" type="text" name="userName" placeholder="Имя" required><br>
                     <!-- class="personal_data" -->
-                    <label>Группа</label>
-                    <select name="groups" required>
+                    <label for="groups">Группа</label>
+                    <select name="groups" id="groups" required>
                         <!-- size="5px" атрибут в select делает список с ползунком-->
                         <option value="374">373</option>
                         <option value="374"selected>374</option>
@@ -35,7 +35,7 @@
             <fieldset>
                 <legend>Вычесление функции</legend>
                 <label for="intial_value">Начальное значение:</label><input type = "text" class="values" id="intial_value" name="intial_value" placeholder="0" required><br><br>
-                <label for = "amount_value">Количество значений:</label><input type = "text" name = "amount_value" class="values" id= "amount_value" placeholder="1" required><br><br>
+                <label for = "final_value">Конечное значений:</label><input type = "text" name = "final_value" class="values" id= "final_value" placeholder="1" required><br><br>
                 <label for="amount_step">Количество шагов:</label><input type = "text" name = "amount_step" class="values" id= "amount_step" placeholder="10" required><br><br>
             </fieldset><br>
             <input type = "submit" value="Готово">

@@ -3,11 +3,10 @@
     $mail = $_REQUEST["userMail"];
     $group = $_REQUEST["groups"];
     $intial_value = $_REQUEST["intial_value"];
-    $amount_value = $_REQUEST["amount_value"];
+    $final_value = $_REQUEST["final_value"];
     $amount_step = $_REQUEST["amount_step"];
-
     
-    if(isset($user_name)&&isset($mail)&&isset($intial_value)&&isset($amount_value)&&isset($amount_step)){
+    if(isset($user_name)&&isset($mail)&&isset($intial_value)&&isset($final_value)&&isset($amount_step)){
         $str = "Выполнил: ".$user_name." <br> Группа: ".$group." <br> Вычесление функции <br>";
         // "<p>F(x)=log(3*arctg(x))</p>"
     }else{
@@ -31,7 +30,6 @@
     // //     return trim (stup_tags($data));
     // // }//Для защиты от неправильных вводов пользователей, иначе сайт крякниться
     ?>
-    
     <!DOCTYPE html>
     <html lang="ru">
     <head>
@@ -45,11 +43,15 @@
             <th>x</th>
             <th>F(x)</th>
             <?php
-            $step = ($amount_value - $intial_value) / $amount_step;
+            function func1_Math($x){
+                return log10(3*atan($x));
+            }
+
+            $step = ($final_value - $intial_value) / $amount_step;
             $x = $intial_value;
             for ($i = 0; $i <= $amount_step; $i++)
             {   
-                $y = log10(3*atan($x));
+                $y = func1_Math($x);
                 $x = round($x, 2);
                 $y = round($y, 2);
                 echo("<tr><td>" . $x . "</td><td>" . $y . "</td></tr>");
