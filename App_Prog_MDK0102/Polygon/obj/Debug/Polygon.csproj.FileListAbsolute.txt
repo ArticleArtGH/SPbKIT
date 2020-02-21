@@ -8,3 +8,13 @@ C:\Users\stud\374\Черных Артём\Работы\Polygon\obj\Debug\Polygon
 C:\Users\stud\374\Черных Артём\Работы\Polygon\obj\Debug\Polygon.csproj.CoreCompileInputs.cache
 C:\Users\stud\374\Черных Артём\Работы\Polygon\obj\Debug\Polygon.exe
 C:\Users\stud\374\Черных Артём\Работы\Polygon\obj\Debug\Polygon.pdb
+C:\Users\stud\374\Черных Артём\Работы\SPbKIT\App_Prog_MDK0102\Polygon\bin\Debug\Polygon.exe.config
+C:\Users\stud\374\Черных Артём\Работы\SPbKIT\App_Prog_MDK0102\Polygon\bin\Debug\Polygon.exe
+C:\Users\stud\374\Черных Артём\Работы\SPbKIT\App_Prog_MDK0102\Polygon\bin\Debug\Polygon.pdb
+C:\Users\stud\374\Черных Артём\Работы\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.csprojAssemblyReference.cache
+C:\Users\stud\374\Черных Артём\Работы\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.Form1.resources
+C:\Users\stud\374\Черных Артём\Работы\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.Properties.Resources.resources
+C:\Users\stud\374\Черных Артём\Работы\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.csproj.GenerateResource.cache
+C:\Users\stud\374\Черных Артём\Работы\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.csproj.CoreCompileInputs.cache
+C:\Users\stud\374\Черных Артём\Работы\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.exe
+C:\Users\stud\374\Черных Артём\Работы\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.pdb
