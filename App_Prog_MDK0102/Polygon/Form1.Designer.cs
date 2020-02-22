@@ -92,7 +92,7 @@
             this.trackBar_Radius.Size = new System.Drawing.Size(100, 45);
             this.trackBar_Radius.TabIndex = 8;
             this.trackBar_Radius.TickFrequency = 5;
-            this.trackBar_Radius.Value = 50;
+            this.trackBar_Radius.Value = 5;
             // 
             // button_Clear
             // 

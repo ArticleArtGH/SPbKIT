@@ -54,18 +54,14 @@ namespace Polygon
             cornerA = 2 * Math.PI / amountTop;//Угол А в радианах
             radius = trackBar_Radius.Value;//Радиус
             amountTop = (int)numericUpDown_AmountTop.Value;//Количество вершин
-            int[] arrayX = new int[1],arrayY = new int[1];
+            int[] arrayX = new int[0],arrayY = new int[0];
             //int nextX = 0, nextY = 0;
-            arrayX[0] = centerX; arrayY[0] = centerY;
             for (int i = 0; i < amountTop; i++)
             {
-                if (i > 0)
-                {
-                    Array.Resize(ref arrayX, arrayX.Length + 1);
-                    Array.Resize(ref arrayY, arrayY.Length + 1);
-                }
-                arrayX[i] = (arrayX[i] + (int)(radius * Math.Cos(cornerA)));
-                arrayY[i] = (arrayY[i] + (int)(radius * Math.Sin(cornerA)));
+                Array.Resize(ref arrayX, arrayX.Length + 1);
+                Array.Resize(ref arrayY, arrayY.Length + 1);
+                arrayX[i] = (centerX + (int)(radius * Math.Cos(cornerA)*i));
+                arrayY[i] = (centerY + (int)(radius * Math.Sin(cornerA)*i));
             }
             Color col = pictureBox_Mono.BackColor;//цвет
             int depth = trackBar_Depth.Value;//толщина пера
