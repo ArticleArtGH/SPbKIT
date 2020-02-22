@@ -16,6 +16,9 @@ namespace Polygon
         int radius = 0;
         int centerX = 0, centerY = 0;
         double cornerA = 0;
+        Bitmap bmp;
+        Pen penPolygon;
+        Graphics gr;
 
         public Form1()
         {
@@ -46,33 +49,53 @@ namespace Polygon
 
         private void button_Draw_Click(object sender, EventArgs e)
         {
-            amountTop = (int)numericUpDown_AmountTop.Value;//Количество вершин
-            radius = trackBar_Radius.Value;//Радиус
-            cornerA = 2*Math.PI/ amountTop;//Угол А в радианах
             centerX = pictureBox_Polygon.Width / 2;
             centerY = pictureBox_Polygon.Height / 2;
-            int[] arrayX = new int[0],arrayY = new int[0];
-            for(int i = 0; i< amountTop; i++)
+            cornerA = 2 * Math.PI / amountTop;//Угол А в радианах
+            radius = trackBar_Radius.Value;//Радиус
+            amountTop = (int)numericUpDown_AmountTop.Value;//Количество вершин
+            int[] arrayX = new int[1],arrayY = new int[1];
+            //int nextX = 0, nextY = 0;
+            arrayX[0] = centerX; arrayY[0] = centerY;
+            for (int i = 0; i < amountTop; i++)
             {
-                Array.Resize(ref arrayX, arrayX.Length + 1);
-                Array.Resize(ref arrayY, arrayY.Length + 1);
-                arrayX[i] = (centerX + (int)(radius * Math.Cos(cornerA)));
-                arrayY[i] = (centerY + (int)(radius * Math.Cos(cornerA)));
+                if (i > 0)
+                {
+                    Array.Resize(ref arrayX, arrayX.Length + 1);
+                    Array.Resize(ref arrayY, arrayY.Length + 1);
+                }
+                arrayX[i] = (arrayX[i] + (int)(radius * Math.Cos(cornerA)));
+                arrayY[i] = (arrayY[i] + (int)(radius * Math.Sin(cornerA)));
             }
             Color col = pictureBox_Mono.BackColor;//цвет
-            int depth = trackBar_Depth.Value;
+            int depth = trackBar_Depth.Value;//толщина пера
             //Pen penPolygon = new Pen(this.pictureBox2.BackColor, this.trackBar1.Value);
             //Pen penPolygon = new Pen(col, this.trackBar2.Value);
-            Pen penPolygon = new Pen(col, depth);
+            penPolygon = new Pen(col, depth);
             //Graphics gr = this.CreateGraphics();//Для формы
-            Graphics gr = this.pictureBox_Polygon.CreateGraphics();
+            bmp = new Bitmap(pictureBox_Polygon.Width, pictureBox_Polygon.Height);
+            gr = this.pictureBox_Polygon.CreateGraphics();
+            gr = Graphics.FromImage(bmp);
             //drawLine.DrawLine(penPolygon, pictureBox1.Location.X / 2, pictureBox1.Location.Y / 2, pictureBox1.Location.X / 2, pictureBox1.Location.Y / 2);
+
             for (int i = 0; i < amountTop; i++)
             {
                 //gr.DrawLine(penPolygon, centerX, centerY, arrayX[i], arrayY[i]);
-                gr.DrawLine(penPolygon, arrayX[i], arrayY[i],0,0);//Как нарисовать вершины ???
+                if (i == amountTop - 1)
+                {
+                    gr.DrawLine(penPolygon, arrayX[i], arrayY[i], arrayX[0], arrayY[0]);
+                }
+                else
+                {
+                    gr.DrawLine(penPolygon, arrayX[i], arrayY[i], arrayX[i], arrayY[i]);//Как нарисовать вершины ???
+                }
             }
             //gr.DrawLine(penPolygon, pictureBox_Polygon.Height / 2, pictureBox_Polygon.Height / 2, pictureBox_Polygon.Width, pictureBox_Polygon.Height / 2);
+            //gr.DrawLine(penPolygon, 100,100,100,100);
+            //gr.DrawLine(penPolygon, 200, 100, 200, 100);
+            //gr.DrawLine(penPolygon, 200, 200, 200, 200);
+            //gr.DrawLine(penPolygon, 100, 200, 100, 200);
+            //pictureBox_Polygon.Image = bmp;
         }
 
         private void button_Clear_Click(object sender, EventArgs e)
