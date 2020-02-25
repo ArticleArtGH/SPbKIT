@@ -26,7 +26,8 @@ namespace Caesars_code//Работает только для EN символов
                 "1 - Цезарь\n" +
                 "2 - Вижлер\n" +
                 "3 - Перестановка\n"+
-                "4 - XOR\n");
+                "4 - XOR\n"+
+                "5 - Плейфера\n");
             exercise = ReadLine(); 
             switch (exercise)
             {
@@ -202,8 +203,9 @@ namespace Caesars_code//Работает только для EN символов
                     }
                     WriteLine("Расшифрованный пароль:\n" + password);
                     break;
-                case "4"://Минус в моём коде только что не выведит каретку(пренос на следующую строку)
-                    //в виде символов.
+                case "4"://Минус в моём коде только что не выведит выведит некоторые символы неизвестные, но
+                    //с ними можно решить проблему как с пробелом я решил. Всё же может есть способ лучше
+                    //решения неизвестных символов.
                     WriteLine("Введите кодовое слово (ключ) для шифрования пароля:");
                     s_key = ReadLine();
                     k = 0; changePasword = "";
@@ -259,10 +261,15 @@ namespace Caesars_code//Работает только для EN символов
                         //можно также это использовать в INT, а ещё где не проверял.
 
                         //bits = Convert.ToInt64(s_symCode);
-                        code += Convert.ToChar(bits);
+                        //code += Convert.ToChar(bits);
+                        //string backslah = "\\u0003";
+                        //if (bits == 2)
+                        //    code += code.Insert(0, backslah);
+                        code += (bits == 2) ? Convert.ToChar("\\u0003") : Convert.ToChar(bits);//Если попадётся 
+                        //пробел то он выведистя в виде символа.
+
                         //code += "\\" + Encoding.GetEncoding(1251).GetString(new byte[] { bits } )[0];
                         //code += Convert.ToChar(bits);
-
                         //code += Convert.ToString(bits, toBase:8);
 
                         s_symCode = "";
@@ -317,11 +324,25 @@ namespace Caesars_code//Работает только для EN символов
 
                         bits = Convert.ToByte(s_symCode, 2);//Перевод в 10 систему счисленя,
                         //можно также это использовать в INT, а ещё где не проверял.
-                        password += Convert.ToChar(bits);
+                        //password += Convert.ToChar(bits);
+                        password += (bits == 2) ? Convert.ToChar("\\u0003") : Convert.ToChar(bits);//Если попадётся 
+                        //пробел то он выведистя в виде символа.
                         s_symCode = "";
                         bits = 0;
                     }
                     WriteLine("Расшифрованный пароль:\n" + password);
+                    break;
+                case "5":
+                    WriteLine("Введите кодовое ключ для шифрования пароля:");
+                    s_key = ReadLine();
+                    string ch_s_key = "";//тюкю первый символ
+                    ch_s_key += s_key[0];
+                    for (int i = 0; i<s_key.Length; i++)
+                    {
+                        //проверка с 2 символа на не совпадение
+                    }
+                    
+
                     break;
                 default: WriteLine("Вы ввели не верное значение!\n" +
                     "Программа ЗАКРЫВАЕТСЯ !\n" +
