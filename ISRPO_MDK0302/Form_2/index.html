@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset = "utf-8">
+        <link href="style_index.css" rel="stylesheet">
+        <title>Лабораторная 2</title>
+    </head>
+    <boby>
+        <div class="body"></div>
+        <h1 class="FormH1" >Форма</h1>
+        <form action="indesx.php" method="get" name="form">
+            <fieldset>
+                <legend>Ваши данные</legend>
+                    <label for="userName">Имя:</label><input class="personal_data" id="userName" type="text" name="userName" placeholder="Имя" required><br>
+                    <!-- class="personal_data" -->
+                    <label for="groups">Группа</label>
+                    <select name="groups" id="groups" required>
+                        <!-- size="5px" атрибут в select делает список с ползунком-->
+                        <option value="374">373</option>
+                        <option value="374"selected>374</option>
+                        <option value="375">375</option>
+                        <!-- selected - по умолчанию выбранный элемент,
+                        а ещё можно для несколки значений одного и того же name="exaple[]"-->
+                        <option value="71">71</option>
+                    </select><br><br>
+                    <!-- <br><br>for="userSurname">Группа:</label> -->
+                    <!-- <input class="personal_data" id="userSurname" type="text" name="userSurname" placeholder="Фамилия"><br> -->
+                    
+                    <!-- Доабавил for и id для того чтобы слвязать label с input, теперь можно также, если
+                    input был в label при нажатии на надпись активируется ячейка-->
+                    <!-- class="personal_data" -->
+                    <label for="userMail">Почта:</label><input class="personal_data" id="userMail" type="email" name="userMail" placeholder="example@mail.ru" required><!-- Должна быть ПОЧТА - типа  EMAIL -->
+                    <!-- class="personal_data" -->
+            </fieldset><br>
+            <fieldset>
+                <legend>Вычесление функции</legend>
+                <label for="intial_value">Начальное значение:</label><input type = "text" class="values" id="intial_value" name="intial_value" placeholder="0" required><br><br>
+                <label for = "final_value">Конечное значений:</label><input type = "text" name = "final_value" class="values" id= "final_value" placeholder="1" required><br><br>
+                <label for="amount_step">Количество шагов:</label><input type = "text" name = "amount_step" class="values" id= "amount_step" placeholder="10" required><br><br>
+            </fieldset><br>
+            <input type = "submit" value="Готово">
+        </form>
+    </div>
+    </body>          
+</html>
