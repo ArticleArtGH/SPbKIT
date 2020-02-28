@@ -28,3 +28,13 @@ D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\obj\De
 D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.csproj.CoreCompileInputs.cache
 D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.exe
 D:\Локальный диск E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.pdb
+D:\Locale_disk_E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\bin\Debug\Polygon.exe.config
+D:\Locale_disk_E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\bin\Debug\Polygon.exe
+D:\Locale_disk_E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\bin\Debug\Polygon.pdb
+D:\Locale_disk_E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.csprojAssemblyReference.cache
+D:\Locale_disk_E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.Form1.resources
+D:\Locale_disk_E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.Properties.Resources.resources
+D:\Locale_disk_E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.csproj.GenerateResource.cache
+D:\Locale_disk_E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.csproj.CoreCompileInputs.cache
+D:\Locale_disk_E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.exe
+D:\Locale_disk_E\Git_Save\SPbKIT\App_Prog_MDK0102\Polygon\obj\Debug\Polygon.pdb

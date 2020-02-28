@@ -84,7 +84,7 @@
             // trackBar_Radius
             // 
             this.trackBar_Radius.Location = new System.Drawing.Point(117, 35);
-            this.trackBar_Radius.Maximum = 100;
+            this.trackBar_Radius.Maximum = 240;
             this.trackBar_Radius.MaximumSize = new System.Drawing.Size(100, 100);
             this.trackBar_Radius.Minimum = 1;
             this.trackBar_Radius.MinimumSize = new System.Drawing.Size(1, 1);
@@ -92,7 +92,7 @@
             this.trackBar_Radius.Size = new System.Drawing.Size(100, 45);
             this.trackBar_Radius.TabIndex = 8;
             this.trackBar_Radius.TickFrequency = 5;
-            this.trackBar_Radius.Value = 5;
+            this.trackBar_Radius.Value = 100;
             // 
             // button_Clear
             // 
@@ -117,6 +117,11 @@
             // numericUpDown_Rotate
             // 
             this.numericUpDown_Rotate.Location = new System.Drawing.Point(109, 274);
+            this.numericUpDown_Rotate.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown_Rotate.Name = "numericUpDown_Rotate";
             this.numericUpDown_Rotate.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown_Rotate.TabIndex = 5;
@@ -130,6 +135,7 @@
             this.checkBox_Rotate.TabIndex = 4;
             this.checkBox_Rotate.Text = "Вращать";
             this.checkBox_Rotate.UseVisualStyleBackColor = true;
+            this.checkBox_Rotate.CheckedChanged += new System.EventHandler(this.checkBox_Rotate_CheckedChanged);
             // 
             // checkBox_ConnectTop
             // 
