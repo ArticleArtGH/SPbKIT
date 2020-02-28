@@ -20,6 +20,9 @@ namespace Polygon
         Bitmap buf;//  буфер для Bitmap-изображения//Bitmap for raster graphics
         Graphics gr;//  графический объект — некий холст//Graphics for vector graphics
         Pen penPolygon;
+        int[] arrayX = new int[0], arrayY = new int[0];
+        int depth = 0;
+        Color col = Color.White;
 
         public Form1()
         {
@@ -62,19 +65,19 @@ namespace Polygon
             centerX = pictureBox_Polygon.Width / 2;
             centerY = pictureBox_Polygon.Height / 2;
             amountTop = (int)numericUpDown_AmountTop.Value;//Количество вершин
-            cornerA = Math.Round(2 * Math.PI / amountTop,2);//Угол А в радианах
+            cornerA = Math.Round(2 * Math.PI / amountTop, 2);//Угол А в радианах
             radius = trackBar_Radius.Value;//Радиус
-            int[] arrayX = new int[0],arrayY = new int[0];
+            arrayX = new int[amountTop]; arrayY = new int[amountTop];
             //int nextX = 0, nextY = 0;
             for (int i = 0; i < amountTop; i++)
             {
-                Array.Resize(ref arrayX, arrayX.Length + 1);
-                Array.Resize(ref arrayY, arrayY.Length + 1);
+                //Array.Resize(ref arrayX, arrayX.Length + 1);
+                //Array.Resize(ref arrayY, arrayY.Length + 1);
                 arrayX[i] = (int)(centerX + (radius * Math.Cos(cornerA*i)));//на i умножать не правильно, т.к.
                 arrayY[i] = Convert.ToInt32(centerY + (radius * Math.Sin(cornerA*i)));//может быть больше радиуса (я так думаю)
             }
-            Color col = pictureBox_Mono.BackColor;//цвет
-            int depth = trackBar_Depth.Value;//толщина пера
+            col = pictureBox_Mono.BackColor;//цвет
+            depth = trackBar_Depth.Value;//толщина пера
             //Pen penPolygon = new Pen(this.pictureBox2.BackColor, this.trackBar1.Value);
             //Pen penPolygon = new Pen(col, this.trackBar2.Value);
             penPolygon = new Pen(col, depth);
@@ -108,16 +111,16 @@ namespace Polygon
             amountTop = (int)numericUpDown_AmountTop.Value;//Количество вершин
             cornerA = Math.Round(2 * Math.PI / amountTop, 2);//Угол А в радианах
             radius = trackBar_Radius.Value;//Радиус
-            int[] arrayX = new int[0], arrayY = new int[0];
+            arrayX = new int[amountTop]; arrayY = new int[amountTop];
             int k = 0;
 
-            while (checkBox_Rotate.Checked == true)
+            if (checkBox_Rotate.Checked == true)
             {
                 gr.Clear(Color.White);
                 for (int i = 0; i < amountTop; i++)
                 {
-                    Array.Resize(ref arrayX, arrayX.Length + 1);
-                    Array.Resize(ref arrayY, arrayY.Length + 1);
+                    //Array.Resize(ref arrayX, arrayX.Length + 1);
+                    //Array.Resize(ref arrayY, arrayY.Length + 1);
                     if (k == 0)
                     {
                         arrayX[i] = (int)(centerX + (radius * Math.Sin(cornerA * i)));//на i умножать не правильно, т.к.
@@ -130,10 +133,10 @@ namespace Polygon
                     }
                 }
                 k = (k == 0) ? 1 : 0;
-                Color col = pictureBox_Mono.BackColor;//цвет
-                int depth = trackBar_Depth.Value;//толщина пера
-                                                 //Pen penPolygon = new Pen(this.pictureBox2.BackColor, this.trackBar1.Value);
-                                                 //Pen penPolygon = new Pen(col, this.trackBar2.Value);
+                col = pictureBox_Mono.BackColor;//цвет
+                depth = trackBar_Depth.Value;//толщина пера
+                //Pen penPolygon = new Pen(this.pictureBox2.BackColor, this.trackBar1.Value);
+                //Pen penPolygon = new Pen(col, this.trackBar2.Value);
                 penPolygon = new Pen(col, depth);
                 for (int i = 0; i < amountTop; i++)
                 {
@@ -147,11 +150,66 @@ namespace Polygon
                         gr.DrawLine(penPolygon, arrayX[i], arrayY[i], arrayX[i + 1], arrayY[i + 1]);//Как нарисовать вершины ???
                     }
                 }
-                
+
+            }
                 //checkBox_Rotate.MouseEnter(sender);
                 if (checkBox_Rotate.Checked == false)
-                    break;
+                    return; // break;
                 Thread.Sleep((int)this.numericUpDown_Rotate.Value);
+            
+        }
+
+        private void checkBox_ConnectTop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_ConnectTop.Checked == true)
+            {
+                if (amountTop > 3)
+                {
+                    int k = 0;
+                    for (int i = 0; i < amountTop; i++)
+                    {
+                        k = i + 2;
+                        for (int j = 0; j < amountTop - 3; j++)
+                        {
+                            if (k >= amountTop) { k = 0; }
+                            gr.DrawLine(penPolygon, arrayX[i], arrayY[i], arrayX[k], arrayY[k]);
+                            k++;
+                        }
+                    }
+                }
+            }
+            if(checkBox_ConnectTop.Checked == false)
+            {
+                col = pictureBox_Polygon.BackColor;//цвет
+                penPolygon = new Pen(col, depth);
+                if (amountTop > 3)
+                {
+                    int k = 0;
+                    for (int i = 0; i < amountTop; i++)
+                    {
+                        k = i + 2;
+                        for (int j = 0; j < amountTop - 3; j++)
+                        {
+                            if (k >= amountTop) { k = 0; }
+                            gr.DrawLine(penPolygon, arrayX[i], arrayY[i], arrayX[k], arrayY[k]);
+                            k++;
+                        }
+                    }
+                }
+                col = pictureBox_Mono.BackColor;//цвет
+                int oldDepth = depth;
+                penPolygon = new Pen(col, oldDepth);
+                for (int i = 0; i < amountTop; i++)
+                {
+                    if (i == amountTop - 1)
+                    {
+                        gr.DrawLine(penPolygon, arrayX[i], arrayY[i], arrayX[0], arrayY[0]);
+                    }
+                    else
+                    {
+                        gr.DrawLine(penPolygon, arrayX[i], arrayY[i], arrayX[i + 1], arrayY[i + 1]);//Как нарисовать вершины ???
+                    }
+                }
             }
         }
 

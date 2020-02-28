@@ -146,6 +146,7 @@
             this.checkBox_ConnectTop.TabIndex = 3;
             this.checkBox_ConnectTop.Text = "Соединить вершины";
             this.checkBox_ConnectTop.UseVisualStyleBackColor = true;
+            this.checkBox_ConnectTop.CheckedChanged += new System.EventHandler(this.checkBox_ConnectTop_CheckedChanged);
             // 
             // groupBox1
             // 
