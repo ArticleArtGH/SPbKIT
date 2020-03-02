@@ -26,7 +26,8 @@ namespace Caesars_code//Работает только для EN символов
                 "1 - Цезарь\n" +
                 "2 - Вижлер\n" +
                 "3 - Перестановка\n"+
-                "4 - XOR\n");
+                "4 - XOR\n"+
+                "5 - Плейфера\n");
             exercise = ReadLine(); 
             switch (exercise)
             {
@@ -330,6 +331,104 @@ namespace Caesars_code//Работает только для EN символов
                         bits = 0;
                     }
                     WriteLine("Расшифрованный пароль:\n" + password);
+                    break;
+                case "5":
+                    WriteLine("Введите кодовое ключ для шифрования пароля:");
+                    s_key = ReadLine();
+                    string ch_s_key = "";
+                    char[] copy_c_array_alhabet = c_array_alhabet;
+                    string[,] matrix5x5 = new string[5, 5];
+                    ch_s_key += s_key[0];//только первый символ
+                    k = 0; int zero = 0;
+                    zero = Array.BinarySearch(copy_c_array_alhabet, s_key[0]);
+                    copy_c_array_alhabet[zero] = '0';//т.к. этот символ уже точно есть в начале матрце
+                    
+                    for (int i = 1; i< s_key.Length; i++)
+                    {
+                        for (int j = 0; j < ch_s_key.Length; j++)
+                        {
+                            if (s_key[i] == ch_s_key[j])
+                                k++;
+                            zero = i;
+                        }
+                        if (k > 0)
+                        {
+                            k = 0; continue;
+                        }
+                        else
+                        {
+                            ch_s_key += s_key[zero];
+                            //Исключение из алфавита букв ключа
+                            zero = Array.IndexOf(copy_c_array_alhabet, Convert.ToChar(s_key[zero]));
+                            //zero = Array.BinarySearch(copy_c_array_alhabet, Convert.ToChar(s_key[zero]));
+                            //BinarySearch - в данном случае подвёл он 'o' не находил, поэтому IndexOf
+                            if (zero > -1)
+                                copy_c_array_alhabet[zero] = '0';
+                        }
+                    }//Убираем одинаковые символы из ключа для подговтовки к матрице
+                    WriteLine("Изменённый ключ:\n" + ch_s_key);
+
+                    k = 0; zero = 0;
+                    WriteLine("Матрица 5х5:\n");
+                    for (int i = 0; i<5; i++)
+                    {
+                        for (int j = 0; j<5; j++)
+                        {
+                            if (k != ch_s_key.Length)
+                            {
+                                if (ch_s_key[k] == 'i' && ch_s_key[k + 1] == 'j' ||
+                                        ch_s_key[k] == 'j' && ch_s_key[k - 1] == 'i')
+                                {
+                                    matrix5x5[i, j] += Convert.ToString(ch_s_key[k]);
+                                    if (ch_s_key[k] == 'i' && ch_s_key[k + 1] == 'j')
+                                        k--;
+                                }
+                                else
+                                {
+                                    matrix5x5[i, j] = Convert.ToString(ch_s_key[k]);
+                                }
+                                k++;
+                            }//заполнение матрицы ключом
+                            else
+                            {
+                                if (copy_c_array_alhabet[zero] != '0')
+                                {
+                                    if (copy_c_array_alhabet[zero] == 'i' && copy_c_array_alhabet[zero + 1] == 'j'||
+                                        copy_c_array_alhabet[zero] == 'j' && copy_c_array_alhabet[zero - 1] == 'i')
+                                    {
+                                        matrix5x5[i, j] += Convert.ToString(copy_c_array_alhabet[zero]);
+                                        if (copy_c_array_alhabet[zero] == 'i' && copy_c_array_alhabet[zero + 1] == 'j')
+                                        j--;
+                                    }
+                                    else
+                                    {
+                                        matrix5x5[i, j] = Convert.ToString(copy_c_array_alhabet[zero]);
+                                    }
+                                    zero++;
+                                }
+                                else
+                                {
+                                    zero++;
+                                    j--;
+                                }//заполнение матрицы недостающими символами алфавита
+                            }
+                        }
+                    }
+                    WriteLine("  0   1   2   3   4  \n");
+                    for(int i=0; i < 5; i++)
+                    {
+                        Write(i);
+                        for(int j = 0; j<5; j++)
+                        {
+                            if (matrix5x5[i,j]=="ij")
+                            Write(" " + matrix5x5[i, j] + " ");
+                            else
+                                Write(" " + matrix5x5[i, j] + "  ");
+                        }
+                        WriteLine("\n");
+                    }
+                    //SetCursorPosition(CursorLeft,CursorTop - 1);
+
                     break;
                 default: WriteLine("Вы ввели не верное значение!\n" +
                     "Программа ЗАКРЫВАЕТСЯ !\n" +
