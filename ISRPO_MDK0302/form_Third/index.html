@@ -8,7 +8,7 @@
     </head>
     <boby>
         <h1 class="FormH1">Форма для регистрации участинков:</h1>
-        <form action="index1.php" method="get" name="form">
+        <form action="index1.php" method="POST" name="form">
             <fieldset>
                 <legend>Личные данные</legend>
                     <label for="userName">Имя:</label>
@@ -32,14 +32,14 @@
                 <legend>Регистрация на курс(ы)</legend>
                     <label> 
                         <label>Выберите курс(ы), который хотите посещать:</label><br><br>
-                        <input id="PHP" type = "checkbox" name = "course" value="PHP" 
+                        <input id="PHP" type = "checkbox" name = "course[]" value="PHP" 
                         checked>
                         <label for="PHP">PHP</label><br>
-                        <input id="LISP" type = "checkbox" name = "course" value="LISP">
+                        <input id="LISP" type = "checkbox" name = "course[]" value="LISP">
                         <label for="LISP">LISP</label><br>
-                        <input id="C++" type = "checkbox" name = "course" value="C++">
+                        <input id="C++" type = "checkbox" name = "course[]" value="C++">
                         <label for="C++">C++</label><br>
-                        <input id="UNIX" type = "checkbox" name = "course" value="UNIX">
+                        <input id="UNIX" type = "checkbox" name = "course[]" value="UNIX">
                         <label for="UNIX">UNIX</label><br><br>
 
                         <label>Что Вы хотите, чтобы мы знали о Вас<br><br>
