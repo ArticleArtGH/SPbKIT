@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox_NameUser = new System.Windows.Forms.TextBox();
+            this.textBox_Login = new System.Windows.Forms.TextBox();
             this.textBox_Password = new System.Windows.Forms.TextBox();
-            this.label_NameUser = new System.Windows.Forms.Label();
+            this.label_Login = new System.Windows.Forms.Label();
             this.label_Password = new System.Windows.Forms.Label();
             this.label_ConnectWithDB = new System.Windows.Forms.Label();
             this.button_SignIN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox_NameUser
+            // textBox_Login
             // 
-            this.textBox_NameUser.Location = new System.Drawing.Point(101, 172);
-            this.textBox_NameUser.Name = "textBox_NameUser";
-            this.textBox_NameUser.Size = new System.Drawing.Size(254, 20);
-            this.textBox_NameUser.TabIndex = 0;
+            this.textBox_Login.Location = new System.Drawing.Point(101, 172);
+            this.textBox_Login.Name = "textBox_Login";
+            this.textBox_Login.Size = new System.Drawing.Size(254, 20);
+            this.textBox_Login.TabIndex = 0;
             // 
             // textBox_Password
             // 
@@ -49,15 +49,16 @@
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(254, 20);
             this.textBox_Password.TabIndex = 1;
+            this.textBox_Password.TextChanged += new System.EventHandler(this.textBox_Password_TextChanged);
             // 
-            // label_NameUser
+            // label_Login
             // 
-            this.label_NameUser.AutoSize = true;
-            this.label_NameUser.Location = new System.Drawing.Point(98, 146);
-            this.label_NameUser.Name = "label_NameUser";
-            this.label_NameUser.Size = new System.Drawing.Size(103, 13);
-            this.label_NameUser.TabIndex = 2;
-            this.label_NameUser.Text = "Имя пользователя";
+            this.label_Login.AutoSize = true;
+            this.label_Login.Location = new System.Drawing.Point(98, 146);
+            this.label_Login.Name = "label_Login";
+            this.label_Login.Size = new System.Drawing.Size(38, 13);
+            this.label_Login.TabIndex = 2;
+            this.label_Login.Text = "Логин";
             // 
             // label_Password
             // 
@@ -87,6 +88,7 @@
             this.button_SignIN.Text = "Войти";
             this.button_SignIN.UseVisualStyleBackColor = true;
             this.button_SignIN.Click += new System.EventHandler(this.button_SignIN_Click);
+            this.button_SignIN.Enter += new System.EventHandler(this.button_SignIN_Click);
             // 
             // FormConnetDB
             // 
@@ -96,9 +98,9 @@
             this.Controls.Add(this.button_SignIN);
             this.Controls.Add(this.label_ConnectWithDB);
             this.Controls.Add(this.label_Password);
-            this.Controls.Add(this.label_NameUser);
+            this.Controls.Add(this.label_Login);
             this.Controls.Add(this.textBox_Password);
-            this.Controls.Add(this.textBox_NameUser);
+            this.Controls.Add(this.textBox_Login);
             this.Name = "FormConnetDB";
             this.Text = "Соединение с БД";
             this.ResumeLayout(false);
@@ -108,9 +110,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox_NameUser;
+        private System.Windows.Forms.TextBox textBox_Login;
         private System.Windows.Forms.TextBox textBox_Password;
-        private System.Windows.Forms.Label label_NameUser;
+        private System.Windows.Forms.Label label_Login;
         private System.Windows.Forms.Label label_Password;
         private System.Windows.Forms.Label label_ConnectWithDB;
         private System.Windows.Forms.Button button_SignIN;

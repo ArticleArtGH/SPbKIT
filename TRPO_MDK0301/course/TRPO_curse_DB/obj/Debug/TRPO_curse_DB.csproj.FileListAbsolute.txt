@@ -20,3 +20,13 @@ D:\Locale_disk_E\Git_Save\SPbKIT\TRPO_MDK0301\course\TRPO_curse_DB\obj\Debug\TRP
 D:\Locale_disk_E\Git_Save\SPbKIT\TRPO_MDK0301\course\TRPO_curse_DB\obj\Debug\TRPO_curse_DB.csproj.CoreCompileInputs.cache
 D:\Locale_disk_E\Git_Save\SPbKIT\TRPO_MDK0301\course\TRPO_curse_DB\obj\Debug\TRPO_curse_DB.exe
 D:\Locale_disk_E\Git_Save\SPbKIT\TRPO_MDK0301\course\TRPO_curse_DB\obj\Debug\TRPO_curse_DB.pdb
+C:\Users\user07\Desktop\374 Черых Артём\TRPO_MDK0301\TRPO_curse_DB\bin\Debug\TRPO_curse_DB.exe.config
+C:\Users\user07\Desktop\374 Черых Артём\TRPO_MDK0301\TRPO_curse_DB\obj\Debug\TRPO_curse_DB.exe
+C:\Users\user07\Desktop\374 Черых Артём\TRPO_MDK0301\TRPO_curse_DB\obj\Debug\TRPO_curse_DB.pdb
+C:\Users\user07\Desktop\374 Черых Артём\TRPO_MDK0301\TRPO_curse_DB\bin\Debug\TRPO_curse_DB.exe
+C:\Users\user07\Desktop\374 Черых Артём\TRPO_MDK0301\TRPO_curse_DB\bin\Debug\TRPO_curse_DB.pdb
+C:\Users\user07\Desktop\374 Черых Артём\TRPO_MDK0301\TRPO_curse_DB\obj\Debug\TRPO_curse_DB.csprojResolveAssemblyReference.cache
+C:\Users\user07\Desktop\374 Черых Артём\TRPO_MDK0301\TRPO_curse_DB\obj\Debug\TRPO_curse_DB.FormConnetDB.resources
+C:\Users\user07\Desktop\374 Черых Артём\TRPO_MDK0301\TRPO_curse_DB\obj\Debug\TRPO_curse_DB.FormDB.resources
+C:\Users\user07\Desktop\374 Черых Артём\TRPO_MDK0301\TRPO_curse_DB\obj\Debug\TRPO_curse_DB.Properties.Resources.resources
+C:\Users\user07\Desktop\374 Черых Артём\TRPO_MDK0301\TRPO_curse_DB\obj\Debug\TRPO_curse_DB.csproj.GenerateResource.Cache
