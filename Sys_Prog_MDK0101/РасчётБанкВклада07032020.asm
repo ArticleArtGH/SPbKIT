@@ -31,5 +31,6 @@ add r1,r0
 pop r1
 sub 1,r1
 call procent
-ret
+ret ;Для выхода из
+;подпрограммы
 
