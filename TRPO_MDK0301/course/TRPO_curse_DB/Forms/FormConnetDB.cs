@@ -14,7 +14,7 @@ using System.Data.OleDb;
 
 namespace TRPO_curse_DB
 {
-    public partial class FormConnetDB : Form
+    public partial class FormConnectDB : Form
     {
         public static string connDB = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=TeachersOfUniversities.mdb";
         //string connectStr = @"Data Source=.\SQLEXPRESS;Initial Catalog=usersdb:Integrated Security=True";
@@ -23,7 +23,7 @@ namespace TRPO_curse_DB
         //provider=Microsoft.Jet.OLEDB.4.0 для формата с расширением для accedb (2007), 
         //a Provider=Microsoft.ACE.OLEDB.12.0 mdf (2002-2003).//Не точно :)
         //private OleDbConnection connectDB;
-        public FormConnetDB()
+        public FormConnectDB()
         {
             InitializeComponent();
             this.CenterToScreen();//Появление формы по центру экрана
@@ -35,7 +35,7 @@ namespace TRPO_curse_DB
         {//Авторизация
             OleDbConnection connectDB = new OleDbConnection(connDB);//Подключение к БД
             string queryDB = "select count(*) from Users";//команда запроса на кол-во строк в таблице Users
-            connectDB.Open();
+            connectDB.Open();//Делаться кажись должно до выполнения запроса !
             OleDbCommand commandDB = new OleDbCommand(queryDB, connectDB);//Инструкция Transact-SQL
             //OleDbDataReader readerDB = commandDB.ExecuteReader();//Для чтения потока строк (в прямом направлении)
             OleDbDataReader readerDB;
@@ -94,9 +94,17 @@ namespace TRPO_curse_DB
             if (authorization == true)
             {//Запуск БД если аунтентификация пройдена
                 this.Hide();
-                FormDB fDB = new FormDB();
-                fDB.ShowDialog();
-                //fDB.Show();//Для одновременного использования(-hide, -ShowDialog, -close -(убрать))
+                if (arrUsersDT[indexLogin, 0] == "admin" || arrUsersDT[indexLogin, 0] == "owner")
+                {
+                    FormAdminDB fAdb = new FormAdminDB();
+                    fAdb.ShowDialog();
+                    //fDB.Show();//Для одновременного использования(-hide, -ShowDialog, -close -(убрать))
+                }
+                else
+                {
+                    FormUsersDB fUdb = new FormUsersDB();
+                    fUdb.ShowDialog();
+                }
                 this.Close();//Что бы не просто скрывалась, а ещё не занимала память
             }
             else
@@ -112,6 +120,11 @@ namespace TRPO_curse_DB
         private void textBox_Password_TextChanged(object sender, EventArgs e)
         {
             this.textBox_Password.PasswordChar ='*';//Чтобы скрыть вводимы символы пароля
+        }
+
+        private void FormConnetDB_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

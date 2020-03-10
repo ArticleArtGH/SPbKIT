@@ -1,6 +1,6 @@
 ﻿namespace TRPO_curse_DB
 {
-    partial class FormConnetDB
+    partial class FormConnectDB
     {
         /// <summary>
         /// Required designer variable.
@@ -38,23 +38,25 @@
             // 
             // textBox_Login
             // 
-            this.textBox_Login.Location = new System.Drawing.Point(101, 172);
+            this.textBox_Login.Location = new System.Drawing.Point(67, 125);
             this.textBox_Login.Name = "textBox_Login";
             this.textBox_Login.Size = new System.Drawing.Size(254, 20);
             this.textBox_Login.TabIndex = 0;
+            this.textBox_Login.Text = "admin";
             // 
             // textBox_Password
             // 
-            this.textBox_Password.Location = new System.Drawing.Point(101, 244);
+            this.textBox_Password.Location = new System.Drawing.Point(67, 197);
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(254, 20);
             this.textBox_Password.TabIndex = 1;
+            this.textBox_Password.Text = "x*Uu@%Xx";
             this.textBox_Password.TextChanged += new System.EventHandler(this.textBox_Password_TextChanged);
             // 
             // label_Login
             // 
             this.label_Login.AutoSize = true;
-            this.label_Login.Location = new System.Drawing.Point(98, 146);
+            this.label_Login.Location = new System.Drawing.Point(63, 93);
             this.label_Login.Name = "label_Login";
             this.label_Login.Size = new System.Drawing.Size(38, 13);
             this.label_Login.TabIndex = 2;
@@ -63,7 +65,7 @@
             // label_Password
             // 
             this.label_Password.AutoSize = true;
-            this.label_Password.Location = new System.Drawing.Point(98, 217);
+            this.label_Password.Location = new System.Drawing.Point(63, 164);
             this.label_Password.Name = "label_Password";
             this.label_Password.Size = new System.Drawing.Size(45, 13);
             this.label_Password.TabIndex = 3;
@@ -73,7 +75,7 @@
             // 
             this.label_ConnectWithDB.AutoSize = true;
             this.label_ConnectWithDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_ConnectWithDB.Location = new System.Drawing.Point(147, 61);
+            this.label_ConnectWithDB.Location = new System.Drawing.Point(108, 43);
             this.label_ConnectWithDB.Name = "label_ConnectWithDB";
             this.label_ConnectWithDB.Size = new System.Drawing.Size(188, 25);
             this.label_ConnectWithDB.TabIndex = 4;
@@ -81,7 +83,7 @@
             // 
             // button_SignIN
             // 
-            this.button_SignIN.Location = new System.Drawing.Point(167, 322);
+            this.button_SignIN.Location = new System.Drawing.Point(133, 275);
             this.button_SignIN.Name = "button_SignIN";
             this.button_SignIN.Size = new System.Drawing.Size(124, 40);
             this.button_SignIN.TabIndex = 5;
@@ -90,19 +92,20 @@
             this.button_SignIN.Click += new System.EventHandler(this.button_SignIN_Click);
             this.button_SignIN.Enter += new System.EventHandler(this.button_SignIN_Click);
             // 
-            // FormConnetDB
+            // FormConnectDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(392, 373);
             this.Controls.Add(this.button_SignIN);
             this.Controls.Add(this.label_ConnectWithDB);
             this.Controls.Add(this.label_Password);
             this.Controls.Add(this.label_Login);
             this.Controls.Add(this.textBox_Password);
             this.Controls.Add(this.textBox_Login);
-            this.Name = "FormConnetDB";
+            this.Name = "FormConnectDB";
             this.Text = "Соединение с БД";
+            this.Load += new System.EventHandler(this.FormConnetDB_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

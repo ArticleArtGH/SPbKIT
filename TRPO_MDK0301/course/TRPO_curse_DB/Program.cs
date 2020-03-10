@@ -16,7 +16,7 @@ namespace TRPO_curse_DB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormConnetDB());
+            Application.Run(new FormConnectDB());
         }
     }
 }
